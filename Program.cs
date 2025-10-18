@@ -13,7 +13,7 @@
         for (int i = 0; i < 5; i++)
         {
             cities.Add(city);
-            city = city * 2; // кожного разу вдвічі більше
+            city = city * 2;
         }
         Console.WriteLine("Будівництво міст: " + string.Join(", ", cities));
 
@@ -102,4 +102,5 @@
             artifacts.Add(sum);
         }
         Console.WriteLine("Героїчний похід: " + string.Join(", ", artifacts));
+
 
