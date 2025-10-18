@@ -1,106 +1,130 @@
-﻿
-        //1
-        List<int> treasures = new List<int>();
-        for (int i = 1; i <= 5; i++)
-        {
-            treasures.Add(i);
-        }
-        Console.WriteLine("Збір скарбів: " + string.Join(", ", treasures));
+﻿// 1. Країни та столиці у грі
+Dictionary<string, string> countries = new Dictionary<string, string>();
+countries.Add("Україна", "Київ");
+countries.Add("Франція", "Париж");
+countries.Add("Німеччина", "Берлін");
+countries.Add("Італія", "Рим");
+countries.Add("Японія", "Токіо");
 
-        //2
-        List<int> cities = new List<int>();
-        int city = 1;
-        for (int i = 0; i < 5; i++)
-        {
-            cities.Add(city);
-            city = city * 2;
-        }
-        Console.WriteLine("Будівництво міст: " + string.Join(", ", cities));
+Console.WriteLine("🔹 Гра: Вгадай столицю країни");
+foreach (KeyValuePair<string, string> country in countries)
+{
+    Console.Write("Яка столиця країни " + country.Key + "? ");
+    string answer = Console.ReadLine();
+    if (answer != null && answer.Trim().ToLower() == country.Value.ToLower())
+        Console.WriteLine("✅ Правильно!");
+    else
+        Console.WriteLine("❌ Неправильно. Правильна відповідь: " + country.Value);
+}
+Console.WriteLine();
 
-        //3
-        List<int> portals = new List<int>();
-        int portal = 1;
-        for (int i = 0; i < 5; i++)
-        {
-            portals.Add(portal);
-            portal = portal * 2;
-        }
-        Console.WriteLine("Магічні портали: " + string.Join(", ", portals));
+// 2. Телефонний довідник у грі
+Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+phoneBook.Add("Ганна", "123-45-67");
+phoneBook.Add("Олег", "987-65-43");
+phoneBook.Add("Софія", "555-00-11");
 
-        //4
-        List<int> planets = new List<int>();
-        int distance = 100;
-        for (int i = 0; i < 5; i++)
-        {
-            planets.Add(distance);
-            distance = distance * 2;
-        }
-        Console.WriteLine("Подорож на планети: " + string.Join(", ", planets));
+Console.WriteLine("📞 Телефонний довідник:");
+foreach (KeyValuePair<string, string> contact in phoneBook)
+{
+    Console.WriteLine(contact.Key + ": " + contact.Value);
+}
+Console.WriteLine();
 
-        //5
-        List<int> islandTreasures = new List<int>();
-        int treasure = 1;
-        for (int i = 0; i < 5; i++)
-        {
-            islandTreasures.Add(treasure);
-            treasure = treasure + i;
-        }
-        Console.WriteLine("Скарби на островах: " + string.Join(", ", islandTreasures));
+// 3. Кількість входжень предметів у текстовій пригоді
+Dictionary<string, string> objects = new Dictionary<string, string>();
+objects.Add("ключ", "лежить у скрині");
+objects.Add("меч", "захований у печері");
+objects.Add("карта", "на столі у хатині");
 
-        //6
-        List<int> civilization = new List<int> { 1 };
-        for (int i = 1; i < 5; i++)
-        {
-            int sum = 0;
-            foreach (int num in civilization)
-            {
-                sum += num;
-            }
-            civilization.Add(sum);
-        }
-        Console.WriteLine("Розвиток цивілізації: " + string.Join(", ", civilization));
+Console.WriteLine("🗝️ Гра-пригода: Знайди предмет!");
+foreach (KeyValuePair<string, string> item in objects)
+{
+    Console.WriteLine("Предмет " + item.Key + " " + item.Value + ".");
+}
+Console.WriteLine();
 
-        //7.
-        List<int> stations = new List<int>();
-        int station = 1;
-        for (int i = 0; i < 5; i++)
-        {
-            stations.Add(station);
-            station = station * 3;
-        }
-        Console.WriteLine("Космічні станції: " + string.Join(", ", stations));
+// 4. Крамниця зі списком продуктів
+Dictionary<string, int> shop = new Dictionary<string, int>();
+shop.Add("Хліб", 20);
+shop.Add("Молоко", 30);
+shop.Add("Сир", 50);
+shop.Add("Яблуко", 10);
 
-        //8
-        List<int> crystals = new List<int>();
-        int crystal = 1;
-        for (int i = 0; i < 5; i++)
-        {
-            crystals.Add(crystal);
-            crystal = crystal + 4;
-        }
-        Console.WriteLine("Магічні кристали: " + string.Join(", ", crystals));
+Console.WriteLine("🛒 Крамниця:");
+foreach (KeyValuePair<string, int> product in shop)
+{
+    Console.WriteLine(product.Key + " — " + product.Value + " грн");
+}
+Console.WriteLine();
 
-        //9.
-        List<int> years = new List<int>();
-        int year = 2025;
-        for (int i = 0; i < 5; i++)
-        {
-            years.Add(year);
-            year -= 10;
-        }
-        Console.WriteLine("Подорож у часі: " + string.Join(", ", years));
+// 5. Інтерактивний текстовий квест із загадками
+Dictionary<string, string> riddles = new Dictionary<string, string>();
+riddles.Add("Сонце", "Вдень на небі, вночі його нема.");
+riddles.Add("Зірка", "Мерехтить високо в небі.");
+riddles.Add("Дерево", "Має листя, коріння й стовбур.");
 
-        //10
-        List<int> artifacts = new List<int> { 1 };
-        for (int i = 1; i < 5; i++)
-        {
-            int sum = 0;
-            foreach (int a in artifacts)
-            {
-                sum += a;
-            }
-            artifacts.Add(sum);
-        }
-        Console.WriteLine("Героїчний похід: " + string.Join(", ", artifacts));
+Console.WriteLine("🧩 Квест із загадками:");
+foreach (KeyValuePair<string, string> riddle in riddles)
+{
+    Console.WriteLine("Загадка: " + riddle.Value);
+    Console.Write("Відповідь: ");
+    string answer = Console.ReadLine();
+    if (answer != null && answer.Trim().ToLower() == riddle.Key.ToLower())
+        Console.WriteLine("✅ Правильно!\n");
+    else
+        Console.WriteLine("❌ Неправильно. Відповідь: " + riddle.Key + "\n");
+}
 
+// 6. Оцінки студентів у грі
+Dictionary<string, int> marks = new Dictionary<string, int>();
+marks.Add("Андрій", 10);
+marks.Add("Марія", 12);
+marks.Add("Ігор", 8);
+marks.Add("Оксана", 9);
 
+Console.WriteLine("🏫 Оцінки учнів:");
+foreach (KeyValuePair<string, int> mark in marks)
+{
+    Console.WriteLine(mark.Key + ": " + mark.Value + " балів");
+}
+Console.WriteLine();
+
+// 7. Перекладач у грі
+Dictionary<string, string> dictionary = new Dictionary<string, string>();
+dictionary.Add("hello", "привіт");
+dictionary.Add("sun", "сонце");
+dictionary.Add("apple", "яблуко");
+dictionary.Add("friend", "друг");
+
+Console.WriteLine("🌍 Перекладач:");
+Console.Write("Введи слово англійською: ");
+string eng = Console.ReadLine();
+if (eng != null && dictionary.ContainsKey(eng))
+    Console.WriteLine("Переклад: " + dictionary[eng]);
+else
+    Console.WriteLine("Такого слова немає у словнику.");
+Console.WriteLine();
+
+// 8. Фруктовий сад гри
+Dictionary<string, int> fruits = new Dictionary<string, int>();
+fruits.Add("Яблука", 15);
+fruits.Add("Груші", 8);
+fruits.Add("Сливи", 12);
+
+Console.WriteLine("🍎 Фруктовий сад:");
+foreach (KeyValuePair<string, int> fruit in fruits)
+{
+    Console.WriteLine(fruit.Key + ": " + fruit.Value + " шт.");
+}
+Console.WriteLine();
+
+// 9. Обчислення середньої оцінки
+int total = 0;
+foreach (KeyValuePair<string, int> mark in marks)
+{
+    total += mark.Value;
+}
+
+double average = (double)total / marks.Count;
+Console.WriteLine("📊 Середня оцінка у класі: " + average.ToString("F1"));
